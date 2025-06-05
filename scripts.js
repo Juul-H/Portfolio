@@ -50,15 +50,20 @@ const allSections = document.querySelectorAll('main section');
 
 allSections.forEach(section => {
     section.addEventListener('mouseenter', () => {
-        allSections.forEach(otherSection => {
-            if (otherSection !== section) {
-                otherSection.classList.add('dimmed-section');
-            }
-        });
+        // Only apply dimming if on a screen size where it's active (e.g., desktop)
+        if (window.innerWidth >= 640) { // Check if screen is larger than mobile breakpoint
+            allSections.forEach(otherSection => {
+                if (otherSection !== section) {
+                    otherSection.classList.add('dimmed-section');
+                }
+            });
+        }
     });
     section.addEventListener('mouseleave', () => {
-        allSections.forEach(otherSection => {
-            otherSection.classList.remove('dimmed-section');
-        });
+        if (window.innerWidth >= 640) { // Only remove dimming if on a screen size where it's active
+            allSections.forEach(otherSection => {
+                otherSection.classList.remove('dimmed-section');
+            });
+        }
     });
 });
