@@ -1,0 +1,138 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6a6a6a;
+}
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-align: left;
+}
+#typed-text {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    border-right: .15em solid transparent;
+    transition: border-right-color 0.1s ease-in-out;
+}
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.timeline-dot {
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    z-index: 10;
+}
+@media (max-width: 640px) {
+    .timeline-dot {
+        left: -28px;
+    }
+    .timeline-line-segment {
+        left: -23px !important;
+    }
+    .timeline-content-wrapper {
+        padding-left: 1rem;
+        margin-left: 0.25rem;
+    }
+}
+.timeline-dot-blue { background-color: #3b82f6; }
+.timeline-dot-green { background-color: #22c55e; }
+.timeline-dot-purple { background-color: #8b5cf6; }
+.timeline-dot-red { background-color: #ef4444; }
+.timeline-content-wrapper {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-left: 0.5rem;
+}
+.timeline-line-segment {
+    position: absolute;
+    left: -25px;
+    top: 12px;
+    bottom: -1.5rem;
+    width: 2px;
+    background-color: #374151;
+    z-index: 5;
+}
+.timeline-item:last-child .timeline-line-segment {
+    bottom: auto;
+    height: calc(100% - 20px);
+}
+.timeline-item {
+    transition: transform 0.2s ease-out;
+}
+.timeline-item:hover {
+    transform: translateY(-3px);
+}
+.project-card .tech-tag {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-left: 0.25rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+.project-card .tech-tag:hover {
+    transform: translateY(-2px);
+}
+.project-card, .hobby-card {
+    background-color: transparent;
+    border: 1px solid #374151;
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+
+.project-card:hover, .hobby-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    background-color: rgba(31, 41, 55, 0.2);
+    z-index: 10; 
+}
+.dimmed-section {
+    opacity: 0.7;
+    filter: blur(2px);
+    transition: opacity 0.3s ease-out, filter 0.3s ease-out;
+    pointer-events: none;
+}
+.hobby-card .hobby-metric {
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+}
+footer a i {
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+footer a:hover i {
+    color: #60a5fa;
+    transform: scale(1.1);
+}
